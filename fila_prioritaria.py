@@ -1,4 +1,6 @@
-class FilaPrioritaria:
+from fila_base import FilaBase
+
+class FilaPrioritaria(FilaBase):
     codigo: int = 0
     fila = []
     clientes_atendidos = []
@@ -8,7 +10,7 @@ class FilaPrioritaria:
         self.senha_atual = f'PR{self.codigo}'
 
     def reseta_fila(self) -> None:
-        if self.codigo >= 100:
+        if self.codigo >= 200:
             self.codigo = 0
         else:
             self.codigo += 1
